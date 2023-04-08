@@ -17,17 +17,17 @@ def make_args():
     parser.add_argument('--Layers', type =int, default=2, help='the numbers of uu-GCN layer') 
     parser.add_argument('--rank', type =int, default=3, help='the dimension of low rank matrix decomposition') 
     # aggreation of the features of parameters
-    parser.add_argument('--wu1', type = int, default=0.8, help='the coefficient of feature fusion ') 
-    parser.add_argument('--wu2', type = int, default=0.2, help='the coefficient of feature fusion') 
-    parser.add_argument('--wi1', type = int, default=0.8, help='the coefficient of feature fusion ') 
-    parser.add_argument('--wi2', type = int, default=0.2, help='the coefficient of feature fusion') 
+    parser.add_argument('--wu1', type = float, default=0.8, help='the coefficient of feature fusion ') 
+    parser.add_argument('--wu2', type = float, default=0.2, help='the coefficient of feature fusion') 
+    parser.add_argument('--wi1', type = float, default=0.8, help='the coefficient of feature fusion ') 
+    parser.add_argument('--wi2', type = float, default=0.2, help='the coefficient of feature fusion') 
 
     parser.add_argument('--gcn_act', default='prelu',help='metaPath gcn activation function')
     parser.add_argument('--permute', type=int, default=1, help='whether permute subsets')
     parser.add_argument('--graphSampleSeed', type=int, default=5000, help='num sampled graph node')
-    parser.add_argument('--metareg', type = int, default=0.15, help='weight of loss with reg') 
+    parser.add_argument('--metareg', type = float, default=0.15, help='weight of loss with reg') 
     # ssl loss
-    parser.add_argument('--ssl_beta', type = int, default=0.32, help='weight of loss with ssl') 
+    parser.add_argument('--ssl_beta', type =float, default=0.32, help='weight of loss with ssl') 
     parser.add_argument('--ssl_temp', type=float, default=0.5, help='the temperature in softmax')
     parser.add_argument('--ssl_ureg', type=float, default=0.04)
     parser.add_argument('--ssl_ireg', type=float, default=0.05)
